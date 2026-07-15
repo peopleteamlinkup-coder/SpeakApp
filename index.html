@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SpeakApp by LinkUp — anonymous team feedback." />
+  <title>SpeakApp | LinkUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="app-card" aria-labelledby="page-title">
+      <header class="brand-header">
+        <img class="company-logo" src="assets/linkup-logo.png" alt="LinkUp — Talents Beyond Borders" />
+        <div class="brand-copy">
+          <p class="eyebrow">Anonymous team feedback</p>
+          <h1 id="page-title">Speak<span>App</span></h1>
+          <p class="intro">
+            A safe place to unload what is on your mind or thank someone who made a difference.
+            No name or email is collected.
+          </p>
+        </div>
+      </header>
+
+      <form id="feedbackForm" class="feedback-form">
+        <fieldset>
+          <legend>What would you like to share?</legend>
+          <div class="choice-grid">
+            <label class="choice-card">
+              <input type="radio" name="feedbackType" value="Unload" checked />
+              <span class="choice-icon" aria-hidden="true">💬</span>
+              <span>
+                <strong>Unload something</strong>
+                <small>Share a concern, frustration, idea, or anything you need to get off your chest.</small>
+              </span>
+            </label>
+
+            <label class="choice-card">
+              <input type="radio" name="feedbackType" value="Thank you" />
+              <span class="choice-icon" aria-hidden="true">💚</span>
+              <span>
+                <strong>Say thank you</strong>
+                <small>Recognize a colleague, a helpful gesture, or a moment worth celebrating.</small>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="message-label" for="message">Your message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="7"
+          maxlength="2000"
+          placeholder="Write your feedback here..."
+          required
+        ></textarea>
+        <div class="form-meta">
+          <span>Anonymous by design</span>
+          <span id="characterCount">0 / 2000</span>
+        </div>
+
+        <label class="consent-row">
+          <input id="consent" type="checkbox" required />
+          <span>I understand that only the CEO and the appointed HR point of contact (POC) will have access to this anonymous feedback.</span>
+        </label>
+
+        <button id="submitButton" type="submit">Send anonymously</button>
+        <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <footer>
+        <p>SpeakApp by LinkUp</p>
+        <p>Please do not include any personal information in your feedback.</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
